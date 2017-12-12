@@ -45,3 +45,31 @@ function hold() {
   pigGame.turnScore = 0;
   switchPlayer();
 }
+
+function switchPlayer () {
+  if (pigGame.playerUp === 1) {
+    $("#player1Button").hide();
+    $("#player2Button").show();
+    pigGame.playerUp = 2;
+
+  } else {
+    $("#player2Button").hide();
+    $("#player1Button").show();
+    pigGame.playerUp = 1;
+
+  }
+}
+
+function resetGame() {
+  pigGame.player1Score = 0;
+  pigGame.player2Score = 0;
+  pigGame.playerUp = 1;
+  pigGame.turnScore = 0;
+}
+
+/*Front End */
+
+function alertEndTurn(){
+  alert("Sorry - you rolled a 1.  Your score remains the same and your turn is over.");
+  $(".playerStatus").text(pigGame.playerUp);
+}
