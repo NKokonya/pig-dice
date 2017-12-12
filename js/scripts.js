@@ -73,3 +73,9 @@ function alertEndTurn(){
   alert("Sorry - you rolled a 1.  Your score remains the same and your turn is over.");
   $(".playerStatus").text(pigGame.playerUp);
 }
+
+function alertWinner(playerNumber) {
+  alert("Player " + playerNumber + " is the BIG winner!!");
+  resetGame();
+  $(".gameStatusDisplay").text(0);
+}
