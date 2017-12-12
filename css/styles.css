@@ -10,9 +10,6 @@
    bottom: 50px;
  }
 
- .gameDisplay{
-
- }
 
 
 #gameDisplayPlayer1 {
@@ -23,5 +20,5 @@
 #gameDisplayPlayer2 {
   border: 5px solid #000000;
   padding-bottom: 5px;
-  display: inline-grid;
+
 }
