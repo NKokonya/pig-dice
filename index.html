@@ -2,61 +2,65 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Pig-Dice Game</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-   <link href="css/styles.css" rel="stylesheet">
-   <script src="js/jquery-3.2.1.min.js"></script>
-   <script src="js/scripts.js"></script>
+    <title>Pig Dice</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/scripts.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="jumbotron">
-        <img src="https://worleygig.files.wordpress.com/2014/10/pig-dice.jpg" alt="pig-dice"id="pigimg">
-        <h1>Let's Play Pig Dice</h1>
 
-        <form id="pigForm"class="form-group" action="index.html" method="post">
-          <div class="player-group">
-            <label class="player-group">Player 1 Enter Name</label>
-            <input id="playerName1"type="text">
-          </div>
-          <div class="playersName">
-            <label class="player-group">Player 2 Enter Name</label>
-            <input id="playerName2"type="text">
-          </div>
-          <button class="player-group btn btn-success" name="button">Submit</button>
-        </form>
-      </div>
-      <div class="container-fluid gameDisplay">
-        <div class="row">
-          <div class="col-md-3" id="gameDisplayPlayer1">
-            <h1><span id="playerName1"></span>'s Score: <span class="gameStatusDisplay player1Score">0</span></h1>
-            <div id="player1Button">
-              <h2>Player <span class="playerStatus" class="gameStatusDisplay"></span> 's Turn</h2>
-              <h2>Score for this Turn: <span id="turnScore" class="gameStatusDisplay turnScore"></span></h2>
-              <h2>Roll Result: <span id="rollResult" class="gameStatusDisplay rollResult"></span></h2>
-
-              <button type="button" class="btn btn-warning btn-lg rollPig">Roll</button>
-              <button type="button" class="btn btn-primary btn-lg holdPig">Hold</button>
-            </div>
-          </div>
-
-          <div class="col-md-3 col-md-offset-2" id="gameDisplayPlayer2">
-            <h1><span id="playerName2"></span>'s Score: <span class="gameStatusDisplay player2Score">0</span></h1>
-            <div id="player2Button">
-            <h2>Player <span class="playerStatus"></span>'s Turn</h2>
-
-            <h2>Score for this Turn: <span id="turnScore" class="gameStatusDisplay turnScore"></span></h2>
-            <h2>Roll Result: <span id="rollResult" class="gameStatusDisplay rollResult"></span></h2>
+        <h1>Let's Play Pig Dice!!</h1>
 
 
-            <button type="button" class="btn btn-warning btn-lg rollPig">Roll</button>
-            <button type="button" class="btn btn-primary btn-lg holdPig">Hold</button>
-          </div>
+      <form id="pigForm" class="form-group" action="index.html" method="post">
+        <div class="player-group">
+          <label class="player-group">Enter Player1</label>
+          <input id="playerName1" type="text">
         </div>
+        <div class="playersName">
+          <label class="player-group">Enter Player2</label>
+          <input id="playerName2" type="text">
         </div>
-
-
+        <button class="player-group btn btn-success" name="button">Submit</button>
+      </form>
     </div>
 
+      <br>
+      <div class="gameDisplay">
+        <div class="col-md-5" id="gameDisplayPlayer1">
+          <h1><span id="playerName1"></span>'s Score: <span class="gameStatusDisplay  player1Score">0</span></h1>
+          <div id="player1Button">
+          <h2>Player <span class="playerStatus" class="gameStatusDisplay"></span>'s Turn</h2>
+          <h2>Score for this Turn: <span id="turnScore" class="gameStatusDisplay turnScore"></span></h2>
+          <h2>Roll Result: <span id="rollResult" class="gameStatusDisplay rollResult"></span></h2>
+
+          <button type="button" class="btn btn-warning btn-lg rollPig">Roll</button>
+          <button type="button" class="btn btn-primary btn-lg holdPig">Hold</button>
+          </div>
+        </div>
+
+
+        <div class="col-md-5 col-md-offset-2" id="gameDisplayPlayer2">
+          <h1><span id="playerName2"></span>'s Score: <span class="gameStatusDisplay player2Score">0</span></h1>
+          <div id="player2Button">
+          <h2>Player <span class="playerStatus"></span>'s Turn</h2>
+
+          <h2>Score for this Turn: <span id="turnScore" class="gameStatusDisplay turnScore"></span></h2>
+          <h2>Roll Result: <span id="rollResult" class="gameStatusDisplay rollResult"></span></h2>
+
+
+          <button type="button" class="btn btn-warning btn-lg rollPig">Roll</button>
+          <button type="button" class="btn btn-primary btn-lg holdPig">Hold</button>
+        </div>
+
+      </div>
+
+
+
+      </div>
+    </div>
   </body>
 </html>

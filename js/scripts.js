@@ -1,5 +1,6 @@
-/* Back-end */
-function Names(name1, name2)  {
+/*Back end code */
+
+function Names(name1, name2) {
   this.name1 = name1;
   this.name2 = name2;
 }
@@ -12,7 +13,7 @@ var pigGame = {
 };
 
 function dieRoll () {
-  die1 = Math.floor(Math.random()*6)+1;
+  die1 = Math.floor(Math.random()*6) +1;
   return die1;
 }
 
@@ -25,17 +26,17 @@ var playerRoll = function() {
   } else {
     pigGame.turnScore +=roll;
     if (pigGame.playerUp === 1) {
-      if (pigGame.turnScore + pigGame.player1Score >= 100) {
+      if (pigGame.turnScore + pigGame.player1Score >= 50) {
         alertWinner(1);
       }
-    } else if (pigGame.turnScore + pigGame.player2Score >= 100) {
+    } else if (pigGame.turnScore + pigGame.player2Score >= 50) {
       alertWinner(2);
   }
   }
   return roll;
 }
 
-function hold() {
+function holdThePig() {
   var currentPlayer = pigGame.playerUp;
   if (currentPlayer ===1) {
     pigGame.player1Score += pigGame.turnScore;
@@ -45,6 +46,7 @@ function hold() {
   pigGame.turnScore = 0;
   switchPlayer();
 }
+
 
 function switchPlayer () {
   if (pigGame.playerUp === 1) {
@@ -67,7 +69,8 @@ function resetGame() {
   pigGame.turnScore = 0;
 }
 
-/*Front End */
+/*Front end code */
+
 
 function alertEndTurn(){
   alert("Sorry - you rolled a 1.  Your score remains the same and your turn is over.");
@@ -79,3 +82,35 @@ function alertWinner(playerNumber) {
   resetGame();
   $(".gameStatusDisplay").text(0);
 }
+
+$(document).ready(function() {
+
+  $("form#pigForm").submit(function(event){
+    var playerName1 = $("input#playerName1").val();
+    var playerName2 = $("input#playerName2").val();
+      $("span#playerName1").text(playerName1);
+      $("span#playerName2").text(playerName2);
+      $("#player2Button").hide();
+      $("#player1Button").show();
+      $(".playerStatus").text(pigGame.playerUp);
+      event.preventDefault();
+
+    var nameHolder = new Names(playerName1, playerName2);
+  })
+
+
+  $(".rollPig").click(function() {
+    pigResult = playerRoll();
+    $(".rollResult").text(pigResult);
+    $(".turnScore").text(pigGame.turnScore);
+
+  });
+
+  $(".holdPig").click(function(){
+    holdThePig();
+    $("rollResult").text("");
+    $(".player1Score").text(pigGame.player1Score);
+    $(".player2Score").text(pigGame.player2Score);
+    $(".playerStatus").text(pigGame.playerUp);
+  });
+});

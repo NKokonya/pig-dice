@@ -1,24 +1,20 @@
  .jumbotron {
    background-color: #000000;
    color: #ffffff;
-   height: 400px;
- }
-
- #pigimg{
-   float: right;
-   position: relative;
-   bottom: 50px;
+   border: 3px solid purple;
  }
 
 
+ #gameDisplayPlayer1 {
+   background-color: ivory;
+   border: 2px solid yellow;
+ }
 
-#gameDisplayPlayer1 {
-  border: 5px solid #000000;
-  padding-bottom: 5px;
-}
+ #gameDisplayPlayer2 {
+   background-color: ivory;
+   border: 2px solid yellow;
+ }
 
-#gameDisplayPlayer2 {
-  border: 5px solid #000000;
-  padding-bottom: 5px;
-
-}
+ h1 {
+   color: red;
+ }
